@@ -1,5 +1,5 @@
-
-
+using Core.CrossCuttingConcerns.Exceptions;
+using Kodlama.io.Devs.Application;
 using Kodlama.io.Devs.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-//builder.Services.AddApplicationServices();
+builder.Services.AddApplicationServices(); //Burayý unutma
 //builder.Services.AddSecurityServices();
 builder.Services.AddPersistenceServices(builder.Configuration);
 //builder.Services.AddInfrastructureServices();
@@ -25,6 +25,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+if (app.Environment.IsProduction())
+    app.ConfigureCustomExceptionMiddleware(); //hata kodu
 
 app.UseAuthorization();
 
