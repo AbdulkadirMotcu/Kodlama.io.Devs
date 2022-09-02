@@ -14,6 +14,7 @@ namespace Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Commands.Upd
     public class UpdateProgrammingLanguageCommand:IRequest<UpdatedProgrammingLanguageDto>
     {
         public int Id { get; set; }
+        public string Name { get; set; }
 
         public class UpdateProgrammingLanguageCommanHandler : IRequestHandler<UpdateProgrammingLanguageCommand, UpdatedProgrammingLanguageDto>
         {
