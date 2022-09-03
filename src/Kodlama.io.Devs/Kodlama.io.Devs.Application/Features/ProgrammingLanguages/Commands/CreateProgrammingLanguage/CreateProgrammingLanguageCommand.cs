@@ -22,11 +22,11 @@ namespace Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Commands.Cre
             private readonly IMapper _mapper;
             private readonly ProgrammingLanguageRules _programmingLanguageRules;
 
-            public CreateProgrammingLanguageCommandHandler(IProgrammingLanguageRepository programmingLanguageRepository, IMapper mapper)
+            public CreateProgrammingLanguageCommandHandler(IProgrammingLanguageRepository programmingLanguageRepository, IMapper mapper, ProgrammingLanguageRules programmingLanguageRules)
             {
                 _programmingLanguageRepository = programmingLanguageRepository;
                 _mapper = mapper;
-                //_programmingLanguageRules = programmingLanguageRules;
+                _programmingLanguageRules = programmingLanguageRules;
             }
 
             public async Task<CreatedProgrammingLanguageDto> Handle(CreateProgrammingLanguageCommand request, CancellationToken cancellationToken)
