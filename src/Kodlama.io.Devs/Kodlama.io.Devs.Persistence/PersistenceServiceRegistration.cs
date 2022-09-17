@@ -20,6 +20,16 @@ namespace Kodlama.io.Devs.Persistence
                                                 options.UseSqlServer(
                                                     configuration.GetConnectionString("KodlamaioDevsConnectionString")));
             services.AddScoped<IProgrammingLanguageRepository, ProgrammingLanguageRepository>();
+            services.AddScoped<ILanguageTechnologyRepository, LanguageTechnologyRepository>();
+            services.AddScoped<IDeveloperRepository, DeveloperRepository>();
+            services.AddScoped<ISocialRepository, SocialRepository>();
+
+
+            //Security
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IOperationClaimRepository, OperationClaimRepository>();
+            services.AddScoped<IUserOperationClaimRepository, UserOperationClaimRepository>();
+
 
 
             return services;
