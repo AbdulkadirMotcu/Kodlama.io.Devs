@@ -10,6 +10,7 @@
     <Folder Include="Features\LanguageTechnologies\Constants\" />
     <Folder Include="Features\LanguageTechnologies\Rules\" />
     <Folder Include="Features\ProgrammingLanguages\Constants\" />
+    <Folder Include="Features\Socials\Rules\" />
   </ItemGroup>
 
   <ItemGroup>
